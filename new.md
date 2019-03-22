@@ -2,7 +2,7 @@
 #### 二、新建命令：vue init webpack my-project
 1. $ Project name (my-project)        ------------项目名称
 2. $ Project description (A Vue.js project)        ------------项目描述
-3. Author (loktar <******@gmail.com>)        ------------项目创建者
+3. $ Author (loktar <******@gmail.com>)        ------------项目创建者
 4. $ Install vue-router? (Y/n)        ------------Yes
 5. $ Use ESLint to lint your code? (Y/n)        ------------是否启用eslint检测规则
 6. $ Set up unit tests (Y/n)        ------------是否安装单元测试
