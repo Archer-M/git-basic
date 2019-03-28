@@ -115,6 +115,8 @@
     
     ![效果](img/xiaoguo.png)
 
+    感谢[webpack+vue+sass项目中，sass提取全局引用](https://juejin.im/post/5c19adff6fb9a049f91283b3)
+
 #### 五、引入Element
 1. 运行命令
 
