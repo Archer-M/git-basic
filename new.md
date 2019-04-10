@@ -336,14 +336,14 @@
 #### 十一、sortable.js 表格拖拽
 1. 安装sortable
    
-   `npm install sortablejs`
+   `npm install sortable.js --save`
 
 2. 引用
    
    `import Sortable from 'sortablejs'`
 
 3. 使用
-   
+   t
    - 动态循环用以生成表头、表体(row-key 设置惟一性)
    ```
    <el-table :data="tableData" 
