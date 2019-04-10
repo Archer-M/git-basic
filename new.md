@@ -344,7 +344,7 @@
 
 3. 使用
    
-   - 动态循环用以生成表头、表体
+   - 动态循环用以生成表头、表体(row-key 设置惟一性)
    ```
    <el-table :data="tableData" 
       border 
