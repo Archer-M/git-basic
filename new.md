@@ -333,4 +333,66 @@
       .catch((response) => {console.log(response)})
     ```
 
+#### 十一、sortable.js 表格拖拽
+1. 安装sortable
+   
+   `npm install sortablejs`
 
+2. 引用
+   
+   `import Sortable from 'sortablejs'`
+
+3. 使用
+   
+   - 动态循环用以生成表头、表体
+   ```
+   <el-table :data="tableData" 
+      border 
+      row-key="id" 
+      align="left">
+      <el-table-column 
+        v-for="(item, index) in col" 
+        :key="`col_${index}`" 
+        :prop="dropCol[index].prop" 
+        :label="item.label">
+      </el-table-column>
+    </el-table>
+   ```
+   - 定义
+   ```
+   return {
+      col: [],
+      dropCol: [],
+      tableData: [],
+    }
+   ```
+   - 获取数据
+   - 方法
+   ```
+   //行拖拽
+    rowDrop() {
+      const tbody = document.querySelector('.el-table__body-wrapper tbody')
+      const _this = this
+      Sortable.create(tbody, {
+        onEnd({ newIndex, oldIndex }) {
+          const currRow = _this.tableData.splice(oldIndex, 1)[0]
+          _this.tableData.splice(newIndex, 0, currRow)
+        }
+      })
+    }
+   ```
+   ```
+   //列拖拽
+    columnDrop() {
+      const wrapperTr = document.querySelector('.el-table__header-wrapper tr')
+      this.sortable = Sortable.create(wrapperTr, {
+        animation: 180,
+        delay: 0,
+        onEnd: evt => {
+          const oldItem = this.dropCol[evt.oldIndex]
+          this.dropCol.splice(evt.oldIndex, 1)
+          this.dropCol.splice(evt.newIndex, 0, oldItem)
+        }
+      })
+    }
+   ```
